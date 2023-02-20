@@ -121,6 +121,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+TW_INCLUDE_FASTBOOTD := true
 
 # Device
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
