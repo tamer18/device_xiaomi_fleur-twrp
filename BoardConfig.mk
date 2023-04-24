@@ -145,6 +145,7 @@ TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_INCLUDE_FASTBOOTD := true
+TW_FRAMERATE := 60
 
 # Device
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
