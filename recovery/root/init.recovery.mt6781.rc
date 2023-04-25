@@ -27,12 +27,15 @@ on init
 on fs
     install_keyring
 
+on post-fs
+    start mtk.plpath.utils.link
+
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
     user root
     group root system
-    disabled
     oneshot
+    disabled
     seclabel u:r:recovery:s0
 
 service keystore_auth /system/bin/keystore_auth
@@ -48,12 +51,43 @@ service keystore /system/bin/keystore /tmp/misc/keystore
     disabled
     seclabel u:r:recovery:s0
 
+service keystore2 /system/bin/keystore2 /data/misc/keystore2
+    class early_hal
+    user keystore
+    group keystore readproc log
+    seclabel u:r:recovery:s0
+
+service uncrypt /system/bin/uncrypt
+    class main
+    socket uncrypt stream 660 system system
+    disabled
+    oneshot
+
+service setup-bcb /system/bin/uncrypt --setup-bcb
+    class main
+    socket uncrypt stream 660 system system
+    disabled
+    oneshot
+
+service clear-bcb /system/bin/uncrypt --clear-bcb
+    class main
+    socket uncrypt stream 660 system system
+    disabled
+    oneshot
+
 service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
     interface android.hardware.gatekeeper@1.0::IGatekeeper default
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
+
+
+service wait_for_keymaster /system/bin/wait_for_keymaster
+    user root
+    group root system
+    priority -20
+    ioprio rt 0
 
 service keymaster-4-1 /system/bin/android.hardware.keymaster@4.1-service.beanpod
     interface android.hardware.keymaster@4.0::IKeymasterDevice default
