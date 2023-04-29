@@ -75,10 +75,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 PRODUCT_PACKAGES += \
     mtk_plpath_utils.recovery
 
-# Keystore
-PRODUCT_PACKAGES += \
-    android.system.keystore2
-
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \

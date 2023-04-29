@@ -1,7 +1,9 @@
 <!--
     Input:
-        manifest_ir.xml
         manifest_displayfeature.xml
+        manifest_ir.xml
+        manifest_wechat.xml
+        manifest_apuware_xrp_v1.xml
         manifest_apuware_utils.xml
         manifest_sensor_hidl_v2.xml
         manifest_audio.xml
@@ -13,7 +15,6 @@
         manifest_nfc.xml
         manifest_km41.xml
         manifest_tee.xml
-        manifest.microtrust.isee400.xml
         manifest_log.xml
         manifest_mdmonitor.xml
         manifest_aee.xml
@@ -292,6 +293,10 @@
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
             <name>IFingerprintNavigation</name>
             <instance>default</instance>
         </interface>
@@ -299,6 +304,7 @@
             <name>IFingerprintSensorTest</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IFingerprintEngineering/default</fqname>
         <fqname>@1.0::IFingerprintNavigation/default</fqname>
         <fqname>@1.0::IFingerprintSensorTest/default</fqname>
     </hal>
@@ -348,6 +354,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.0::IApuwareUtils/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.apuware.xrp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INeuronXrp</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::INeuronXrp/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.atci</name>
@@ -617,16 +633,6 @@
         <fqname>@1.0::ISoter/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.microtrust.hardware.thh</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IThhDevice</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::IThhDevice/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.xiaomi.hardware.displayfeature</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -636,15 +642,9 @@
         </interface>
         <fqname>@1.0::IDisplayFeature/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>vendor.xiaomi.hardware.touchfeature</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ITouchFeature</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ITouchFeature/default</fqname>
+    <hal format="aidl">
+        <name>android.hardware.vibrator</name>
+        <fqname>IVibrator/default</fqname>
     </hal>
     <sepolicy>
         <version>31.0</version>

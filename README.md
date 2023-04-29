@@ -30,6 +30,7 @@
 
 Works:
 
+- Decryption
 - ADB
 - Screen brightness settings
 - Correct screenshot color
@@ -38,10 +39,6 @@ Works:
 - Backup/Restore
 - USB OTG
 - USB Mouse
-
-Not Works:
-
-- Decryption
 
 TO-DO:
 
