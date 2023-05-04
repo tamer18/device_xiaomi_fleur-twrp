@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
     libhealthd.$(PRODUCT_PLATFORM)
 
+# libion & libxml2
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libxml2
