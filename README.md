@@ -39,7 +39,3 @@ Works:
 - Backup/Restore
 - USB OTG
 - USB Mouse
-
-TO-DO:
-
-- Vibration support
