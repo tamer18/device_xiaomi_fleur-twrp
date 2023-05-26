@@ -18,12 +18,12 @@
 | Rear Camera 2           | 8 MP, f/2.2, 118˚ (ultrawide), 1/4", 1.12µm                   |
 | Rear Camera 3           | 2 MP, f/2.4, (macro)                                                                        |
 | Front Camera            | 16 MP, f/2.5, (wide), 1/3.06" 1.0µm                            |
-| Fingerprint             | Rear-mounted                                                    |
+| Fingerprint             | Rear-munted                                                    |
 | Sensors                 | Accelerometer, Gyro, Virtual Proximity, Compass                         |
 
 ## Device picture
 
-![fleur/miel](https://github.com/ShazuxD/extras/raw/main/IMG/b09176f07d84e119623b4d218bfea455.png)
+
 
 
 ## Features
