@@ -40,6 +40,10 @@ fi
 if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 	echo -e "\x1b[96m[INFO]: Setting up OrangeFox build vars for fleur...\x1b[m"
 	if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
+                # Build Environment
+                export USE_CCACHE=1
+                ccache -M 100G
+
 		# Version / Maintainer infos
 		export OF_MAINTAINER="Rohit"
 		export FOX_VERSION=R12.1
@@ -72,9 +76,9 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		# Other OrangeFox configs
 		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
-        export OF_QUICK_BACKUP_LIST="/boot;/data;"
-        export BUNDLED_MAGISK_VER="25.2"
-        export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk
+                export OF_QUICK_BACKUP_LIST="/boot;/data;"
+                export BUNDLED_MAGISK_VER="25.2"
+                export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk
 
             if [ -f "${FOX_USE_SPECIFIC_MAGISK_ZIP}" -a "$(sha256sum "${FOX_USE_SPECIFIC_MAGISK_ZIP}" 2>/dev/null | awk '{print $1}')" != "${BUNDLED_MAGISK_SUM}" ]
             then
