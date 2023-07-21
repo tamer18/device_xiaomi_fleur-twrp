@@ -80,13 +80,6 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   
 		# Run a process after formatting data to work-around MTP issues
 		export OF_RUN_POST_FORMAT_PROCESS=1
-
-		# OTA for custom ROMs
-                export OF_NO_MIUI_PATCH_WARNING=1
-        	export OF_KEEP_DM_VERITY=1
-	        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-	        export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-	        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
          
 	        # let's see what are our build VARs
                 if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
