@@ -39,7 +39,8 @@ fi
 if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
                 # Build Environment
                 export USE_CCACHE=1
-                ccache -M 100G
+                ccache -M 20G
+	        export LC_ALL="C"
 
 		# Version / Maintainer infos
 		export OF_MAINTAINER="Rohit Tiwari // RT1648"
@@ -67,16 +68,20 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
                 export OF_QUICK_BACKUP_LIST="/boot;/data;"
                 export FOX_ENABLE_APP_MANAGER=1
 		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-                export OF_FLASHLIGHT_ENABLE=1
+                export OF_FLASHLIGHT_ENABLE=0
 		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
                 export TW_DEFAULT_LANGUAGE="en"
 		export OF_USE_SYSTEM_FINGERPRINT=1
+                export FOX_REPLACE_BUSYBOX_PS=1
+	        export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
+	        export OF_USE_NEW_MAGISKBOOT=1
+	        export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
+ 
   
 		# Run a process after formatting data to work-around MTP issues
 		export OF_RUN_POST_FORMAT_PROCESS=1
 
 		# OTA for custom ROMs
-                export OF_VANILLA_BUILD=0
                 export OF_NO_MIUI_PATCH_WARNING=1
         	export OF_KEEP_DM_VERITY=1
 	        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
