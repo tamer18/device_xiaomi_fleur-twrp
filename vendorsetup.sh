@@ -43,7 +43,7 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	        export LC_ALL="C"
 
 		# Version / Maintainer infos
-		export OF_MAINTAINER="Rohit Tiwari // RT1648"
+		export OF_MAINTAINER="Rohit_Tiwari"
                 export OF_MAINTAINER_AVATAR="$PWD/device/xiaomi/fleur/maintainer.png"
 		export FOX_VERSION=R12.1
 		export FOX_BUILD_TYPE="Stable"
