@@ -45,7 +45,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 ccache -M 100G
 
 		# Version / Maintainer infos
-		export OF_MAINTAINER="Rohit"
+		export OF_MAINTAINER="Rohit Tiwari // RT1648"
 		export FOX_VERSION=R12.1
 		export FOX_BUILD_TYPE="Stable"
 
@@ -67,8 +67,8 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
                 export OF_QUICK_BACKUP_LIST="/boot;/data;"
-                export BUNDLED_MAGISK_VER="25.2"
-                export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk
+                #export BUNDLED_MAGISK_VER="25.2"
+                #export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk
 
             if [ -f "${FOX_USE_SPECIFIC_MAGISK_ZIP}" -a "$(sha256sum "${FOX_USE_SPECIFIC_MAGISK_ZIP}" 2>/dev/null | awk '{print $1}')" != "${BUNDLED_MAGISK_SUM}" ]
             then
