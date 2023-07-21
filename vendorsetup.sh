@@ -70,11 +70,13 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
                 export OF_FLASHLIGHT_ENABLE=1
 		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
                 export TW_DEFAULT_LANGUAGE="en"
-
+		export OF_USE_SYSTEM_FINGERPRINT=1
+  
 		# Run a process after formatting data to work-around MTP issues
 		export OF_RUN_POST_FORMAT_PROCESS=1
 
 		# OTA for custom ROMs
+                export OF_VANILLA_BUILD=0
                 export OF_NO_MIUI_PATCH_WARNING=1
         	export OF_KEEP_DM_VERITY=1
 	        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
