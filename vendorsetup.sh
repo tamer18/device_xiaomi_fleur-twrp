@@ -46,9 +46,10 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 
 		# Version / Maintainer infos
 		export OF_MAINTAINER="Rohit Tiwari // RT1648"
+                export OF_MAINTAINER_AVATAR="$PWD/device/xiaomi/fleur/maintainer.png"
 		export FOX_VERSION=R12.1
 		export FOX_BUILD_TYPE="Stable"
-
+               
 		# Device info
 		export OF_AB_DEVICE=1
 		export OF_VIRTUAL_AB_DEVICE=1
@@ -67,45 +68,12 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
                 export OF_QUICK_BACKUP_LIST="/boot;/data;"
-                #export BUNDLED_MAGISK_VER="25.2"
-                #export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk
+                export FOX_ENABLE_APP_MANAGER=1
+		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+                export OF_FLASHLIGHT_ENABLE=1
+		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 
-            if [ -f "${FOX_USE_SPECIFIC_MAGISK_ZIP}" -a "$(sha256sum "${FOX_USE_SPECIFIC_MAGISK_ZIP}" 2>/dev/null | awk '{print $1}')" != "${BUNDLED_MAGISK_SUM}" ]
-            then
-                echo -e "\e[96m[INFO]: Removing invalid magisk zip\e[m"
-                rm -v "${FOX_USE_SPECIFIC_MAGISK_ZIP}"
-            fi
-
-        if [[ ! -f "${FOX_USE_SPECIFIC_MAGISK_ZIP}" ]]
-        then
-            # Download prebuilt magisk for OrangeFox builds
-            echo -e "\e[96m[INFO]: Downloading Magisk v${BUNDLED_MAGISK_VER}\e[m"
-            
-            if [[ "$(command -v "curl")" ]]
-            then
-                if [[ ! -d "$(dirname "${FOX_USE_SPECIFIC_MAGISK_ZIP}")" ]]
-                then
-                    mkdir -p "$(dirname "${FOX_USE_SPECIFIC_MAGISK_ZIP}")"
-                fi
-
-                # Download magisk and verify it
-                curl -L --progress-bar "https://github.com/topjohnwu/Magisk/releases/download/v${BUNDLED_MAGISK_VER}/Magisk-v${BUNDLED_MAGISK_VER}.apk" -o "${FOX_USE_SPECIFIC_MAGISK_ZIP}"
-                DOWNLOADED_SUM="$(sha256sum "${FOX_USE_SPECIFIC_MAGISK_ZIP}" | awk '{print $1}')"
-                
-                if [[ "${DOWNLOADED_SUM}" != "${BUNDLED_MAGISK_SUM}" ]]
-                then
-                    echo -e "\e[91m[ERROR]: Donwloaded Magisk ZIP seems *corrupted*, removing it to protect user's safety\e[m"
-                    rm "${FOX_USE_SPECIFIC_MAGISK_ZIP}"
-                    unset "FOX_USE_SPECIFIC_MAGISK_ZIP"
-                else
-                    echo -e "\e[96m[INFO]: Downloaded Magisk v${BUNDLED_MAGISK_VER}\e[m"
-                fi
-            else
-                # Curl is supposed to be installed according to "Establishing a build environnement" section in AOSP docs
-                # If it isn't, warn the builder about it and fallback to default Magisk ZIP
-                echo -e "\e[91m[ERROR]: Curl not found!\e[m"
-                unset "FOX_USE_SPECIFIC_MAGISK_ZIP"
-            fi
-        fi
-    fi
+		# Run a process after formatting data to work-around MTP issues
+		export OF_RUN_POST_FORMAT_PROCESS=1
+  
 fi
