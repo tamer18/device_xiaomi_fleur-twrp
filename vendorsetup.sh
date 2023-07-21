@@ -39,7 +39,7 @@ fi
 if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
                 # Build Environment
                 export USE_CCACHE=1
-                ccache -M 20G
+                export ccache -M 20G
 	        export LC_ALL="C"
 
 		# Version / Maintainer infos
