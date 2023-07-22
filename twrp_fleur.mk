@@ -21,5 +21,5 @@ $(call inherit-product, device/xiaomi/fleur/device.mk)
 PRODUCT_DEVICE := fleur
 PRODUCT_NAME := twrp_fleur
 PRODUCT_BRAND := xiaomi
-PRODUCT_MODEL := fleur
+PRODUCT_MODEL := Redmi Note 11S/Poco M4 Pro
 PRODUCT_MANUFACTURER := xiaomi
