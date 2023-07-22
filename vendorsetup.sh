@@ -77,11 +77,10 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	        export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
  
                 # OTA Support
-		export OF_VANILLA_BUILD=0
-                export OF_KEEP_DM_VERITY=1
-                export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-                export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-  
+		export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+         	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+    	        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+    
 		# Run a process after formatting data to work-around MTP issues
 		export OF_RUN_POST_FORMAT_PROCESS=1
          
