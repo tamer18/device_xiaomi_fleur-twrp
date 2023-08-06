@@ -62,6 +62,9 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_CLOCK_POS=1 # left and right clock positions available
 		export OF_USE_GREEN_LED=0
 
+                # Removes the loop block errors after flashing ZIPs (Workaround)
+                export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
+
 		# Other OrangeFox configs
 		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
