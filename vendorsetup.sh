@@ -44,9 +44,10 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 		# Version / Maintainer infos
 		export OF_MAINTAINER="Rohit_Tiwari"
+                export OF_MAINTAINER_AVATAR="$PWD/device/xiaomi/fleur/maintainer.png"
 		export FOX_VERSION=R12.1
 		export FOX_BUILD_TYPE="Stable"
-               
+
 		# Device info
 		export OF_AB_DEVICE=1
 		export OF_VIRTUAL_AB_DEVICE=1
@@ -75,15 +76,15 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	        export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
 	        export OF_USE_NEW_MAGISKBOOT=1
 	        export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
- 
+
                 # OTA Support
 		export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
          	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
     	        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-    
+
 		# Run a process after formatting data to work-around MTP issues
 		export OF_RUN_POST_FORMAT_PROCESS=1
-         
+
 	        # let's see what are our build VARs
                 if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
   	        export | grep "FOX" >> $FOX_BUILD_LOG_FILE
@@ -91,6 +92,6 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
        	        export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
   	        export | grep "TW_" >> $FOX_BUILD_LOG_FILE
  	fi
-  
+
 fi
 #
