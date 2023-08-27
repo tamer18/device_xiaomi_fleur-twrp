@@ -49,7 +49,7 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export FOX_BUILD_TYPE="Stable"
 
 		# Device info
-		export OF_AB_DEVICE=1
+		export FOX_AB_DEVICE=1
 		export FOX_VIRTUAL_AB_DEVICE=1
 		export TARGET_DEVICE_ALT="miel"
 
