@@ -50,7 +50,7 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 		# Device info
 		export OF_AB_DEVICE=1
-		export OF_VIRTUAL_AB_DEVICE=1
+		export FOX_VIRTUAL_AB_DEVICE=1
 		export TARGET_DEVICE_ALT="miel"
 
 		# Display / Leds
