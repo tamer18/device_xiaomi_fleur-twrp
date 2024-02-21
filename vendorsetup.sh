@@ -44,14 +44,13 @@ if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 		# Version / Maintainer infos
 		export OF_MAINTAINER="Rohit_Tiwari"
-                export OF_MAINTAINER_AVATAR="$PWD/device/xiaomi/fleur/maintainer.png"
 		export FOX_VERSION=R12.1
 		export FOX_BUILD_TYPE="Stable"
 
 		# Device info
 		export FOX_AB_DEVICE=1
 		export FOX_VIRTUAL_AB_DEVICE=1
-		export TARGET_DEVICE_ALT="miel"
+		export TARGET_DEVICE_ALT="miel,miel_p,fleur_p"
 
 		# Display / Leds
 		export OF_SCREEN_H="2400"
