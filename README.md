@@ -40,8 +40,7 @@ Works:
 - Vibration
 - compatibility only with 4.19 kernel and above
   HyperOS 1.0.2.0 +
--
--known issues:
+- known issues:
   Twrp interface crashes at variable times. restarting
 
 
