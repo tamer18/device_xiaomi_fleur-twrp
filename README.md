@@ -16,15 +16,12 @@
 | Display                 | 6.43 inch, 1080 x 2400 pixels, 20:9 ratio                            |
 | Rear Camera 1           | 64 MP, f/1.8 1.4µm  large pixel (4-in-1)                  |
 | Rear Camera 2           | 8 MP, f/2.2, 118˚ (ultrawide), 1/4", 1.12µm                   |
-| Rear Camera 3           | 2 MP, f/2.4, (macro)                                                                        |
+| Rear Camera 3           | 2 MP, f/2.4, (macro)                                                   |
 | Front Camera            | 16 MP, f/2.5, (wide), 1/3.06" 1.0µm                            |
 | Fingerprint             | Rear-munted                                                    |
 | Sensors                 | Accelerometer, Gyro, Virtual Proximity, Compass                         |
 
 ## Device picture
-
-
-
 
 ## Features
 
@@ -40,3 +37,9 @@ Works:
 - USB OTG
 - USB Mouse
 - Vibration 
+
+compatibility only with 4.19 kernel and above
+HyperOS 1.0.2.0 +
+
+known issues:
+Twrp interface crashes at variable times. restarting
