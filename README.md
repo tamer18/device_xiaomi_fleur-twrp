@@ -9,12 +9,12 @@
 | GPU                     | Mali-G57 MC2                                                    |
 | Memory                  | 6/8 GB                                                          |
 | Shipped Android Version | 11.0 (MIUI 13)  13.0 HyperOs                                    |
-| Storage                 | 64/128/256 GB                                                   |
+| Storage                 | 64/128/256 GB  UFS 2.2                                          |
 | SIM                     | Dual SIM , microSDXC (dedicated slot)                           |
 | Battery                 | 5000 mAh Li-Po (non-removable)                                  |
 | Dimensions              | 159.9 x 73.9 x 8.1 mm                                           |
-| Display                 | 6.43 inch, 1080 x 2400 pixels, 20:9 ratio                       |
-|                         |  AMOLED, 90Hz, 700 nits, 1000 nits (peak)                       |
+| Display Size            | 6.43 inch, 1080 x 2400 pixels, 20:9 ratio (~409 ppi density)    |
+| Display Type            | AMOLED, 90Hz, 700 nits, 1000 nits (peak)                        |
 | Rear Camera 1           | 64 MP, f/1.8 1.4µm  large pixel (4-in-1)                        |
 | Rear Camera 2           | 8 MP, f/2.2, 118˚ (ultrawide), 1/4", 1.12µm                     |
 | Rear Camera 3           | 2 MP, f/2.4, (macro)                                            |
